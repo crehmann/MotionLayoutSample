@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/starting_set">
+
+        <Constraint
+            android:id="@+id/image_background"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@+id/textView_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/padding_small"
+            android:layout_marginTop="36dp"
+            app:layout_constraintRight_toLeftOf="@+id/image_background"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@+id/textView_subtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="@+id/textView_title"
+            app:layout_constraintRight_toRightOf="@+id/textView_title"
+            app:layout_constraintTop_toBottomOf="@+id/textView_title" />
+
+        <Constraint
+            android:id="@+id/view_gradient"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView_description" />
+
+        <Constraint
+            android:id="@+id/textView_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_background" />
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/ending_set">
+
+        <Constraint
+            android:id="@id/image_background"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView_description"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@id/textView_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/padding_small"
+            android:layout_marginTop="36dp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@id/textView_subtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="@+id/textView_title"
+            app:layout_constraintRight_toRightOf="@+id/textView_title"
+            app:layout_constraintTop_toBottomOf="@+id/textView_title" />
+
+        <Constraint
+            android:id="@id/view_gradient"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView_description" />
+
+        <Constraint
+            android:id="@id/textView_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+    </ConstraintSet>
+
+    <Transition
+        android:id="@+id/my_transition"
+        app:constraintSetEnd="@+id/ending_set"
+        app:constraintSetStart="@+id/starting_set"
+        app:duration="250"
+        app:interpolator="linear">
+
+        <!--
+        <OnClick
+            app:mode="toggle"
+            app:target="@id/image_background" />
+            -->
+
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:touchAnchorId="@+id/image_background"
+            app:touchAnchorSide="bottom" />
+
+    </Transition>
+</MotionScene>

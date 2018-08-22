@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.motion.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/motionLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/motion_scene_monkey">
+
+    <ImageView
+        android:id="@+id/image_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_saimiri_sciureus" />
+
+    <TextView
+        android:id="@+id/textView_title"
+        style="@style/FloatingTitle"
+        android:text="Squirrel Monkey" />
+
+    <TextView
+        android:id="@+id/textView_subtitle"
+        style="@style/FloatingSubtitle"
+        android:text="Central &amp; South America" />
+
+    <View
+        android:id="@+id/view_gradient"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:foreground="@drawable/bg_gradient" />
+
+    <TextView
+        android:id="@+id/textView_description"
+        style="@style/DescriptionDark"
+        android:text="The squirrel monkeys are the New World monkeys of the genus Saimiri. They are the only genus in the subfamily Saimirinae. The name of the genus Saimiri is of Tupi origin, and was also used as an English name by early researchers." />
+</android.support.constraint.motion.MotionLayout>
